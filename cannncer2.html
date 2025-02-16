@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Cancer</title>
+    <style>
+      
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+       
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+      
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        li h3 {
+            color: #2980b9;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        li:hover {
+            background-color: #ecf0f1;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+       
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .description {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+      
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        #popup button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #popup button:hover {
+            background-color: #2980b9;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+    <script>
+               function toggleDescription(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+
+  
+        function showPopup() {
+            var popup = document.getElementById('popup');
+            var overlay = document.getElementById('overlay');
+            popup.style.display = "block";
+            overlay.style.display = "block";
+        }
+
+       
+        function closePopup() {
+            var popup = document.getElementById('popup');
+            var overlay = document.getElementById('overlay');
+            popup.style.display = "none";
+            overlay.style.display = "none";
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Types of Cancer</h2>
+    <ul>
+        <li onclick="toggleDescription('carcinomaDesc')">
+            <h3>Carcinoma</h3>
+            <div id="carcinomaDesc" class="description">
+                <p>Carcinomas are the most common type of cancer. They are formed by epithelial cells, which are the cells that cover the inside and outside surfaces of the body.</p>
+                <p>Adenocarcinoma is a cancer that forms in epithelial cells that produce fluids or mucus. Most cancers of the breast, colon, and prostate are adenocarcinomas.</p>
+                <p>Basal cell carcinoma is a cancer that begins in the basal layer of the skin.</p>
+                <p>Squamous cell carcinoma forms in squamous cells, which lie beneath the outer skin surface.</p>
+            </div>
+        </li>
+        <li onclick="toggleDescription('sarcomaDesc')">
+            <h3>Sarcoma</h3>
+            <div id="sarcomaDesc" class="description">
+                <p>Sarcomas are cancers that form in bone and soft tissues, including muscle, fat, blood vessels, lymph vessels, and fibrous tissue.</p>
+                <p>Osteosarcoma is the most common cancer of bone.</p>
+            </div>
+        </li>
+        <li onclick="toggleDescription('leukemiaDesc')">
+            <h3>Leukemia</h3>
+            <div id="leukemiaDesc" class="description">
+                <p>Leukemias are cancers of the blood-forming tissue of the bone marrow. These cancers don't form solid tumors.</p>
+            </div>
+        </li>
+        <li onclick="toggleDescription('lymphomaDesc')">
+            <h3>Lymphoma</h3>
+            <div id="lymphomaDesc" class="description">
+                <p>Lymphoma is cancer that begins in lymphocytes, disease-fighting white blood cells. There are two main types: Hodgkin lymphoma and Non-Hodgkin lymphoma.</p>
+            </div>
+        </li>
+        <li onclick="toggleDescription('myelomaDesc')">
+            <h3>Multiple Myeloma</h3>
+            <div id="myelomaDesc" class="description">
+                <p>Multiple myeloma is a cancer that begins in plasma cells, a type of immune cell.</p>
+            </div>
+        </li>
+        <li onclick="toggleDescription('melanomaDesc')">
+            <h3>Melanoma</h3>
+            <div id="melanomaDesc" class="description">
+                <p>Melanoma begins in melanocytes, cells that produce melanin, the pigment that gives skin its color.</p>
+            </div>
+        </li>
+    </ul>
+
+    <a href="index.html" onclick="showPopup(); return true;"><strong>Back to What is Cancer</strong></a>
+
+    <div id="overlay" onclick="closePopup()"></div>
+    <div id="popup">
+        <h3>More Cancer Awareness</h3>
+        <p>Thank you for learning about cancer. It is important to stay informed, donate to cancer research, and spread awareness!</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cancer Awareness Initiative | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
