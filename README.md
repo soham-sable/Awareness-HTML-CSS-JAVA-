@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Awareness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+      
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin-bottom: 5px;
+        }
+
+        header p {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            padding-top: 20px;
+            font-size: 24px;
+        }
+
+       
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        li button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        li button:hover {
+            background-color: #1d6a88;
+        }
+
+        div {
+            margin-top: 10px;
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+       
+        img {
+            float: right;
+            margin-left: 20px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        
+        button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #2ecc71;
+        }
+    </style>
+    <script>
+        
+        function toggleInfo(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none" || element.style.display === "") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+
+        
+        function showPopup(cancerType) {
+            alert("Learn more about " + cancerType + ". Visit cancer research websites for more information.");
+        }
+
+       
+        function trackButtonClicks(buttonId) {
+            var count = localStorage.getItem(buttonId) || 0;
+            count++;
+            localStorage.setItem(buttonId, count);
+            alert("This button has been clicked " + count + " times.");
+        }
+
+        
+        function resetButtonClicks() {
+            localStorage.clear();
+            alert("Click counts have been reset!");
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <hr>
+    <h1>Cancer Awareness</h1>
+    <p>Understanding cancer to save lives</p>
+    <hr>
+</header>
+
+<h2>What is Cancer?</h2>
+<p><a href="cannncer2.html"><strong>Types of Cancer</strong></a></p>
+<p><a href="cannncer3.html"><strong>Signs and Symptoms</strong></a></p>
+<p>Cancer is a disease in which some of the body’s cells grow uncontrollably and spread to other parts of the body. </p>
+<p>Cancer can start almost anywhere in the human body, which is made up of trillions of cells. Normally, human cells grow and multiply (through a process called cell division) to form new cells as the body needs them. When cells grow old or become damaged, they die, and new cells take their place.</p>
+<img src="cancer.jpg" width="300">
+<p>Sometimes this orderly process breaks down, and abnormal or damaged cells grow and multiply when they shouldn’t. These cells may form tumors, which are lumps of tissue. Tumors can be cancerous or not cancerous (benign). </p>
+
+<h2>Types of Cancer</h2>
+<ul>
+    <li><strong>Carcinoma</strong> <button onclick="toggleInfo('carcinomaInfo'); trackButtonClicks('carcinomaButton')">More Info</button></li>
+    <div id="carcinomaInfo">
+        <p>Carcinomas are the most common type of cancer. They are formed by epithelial cells, which are the cells that cover the inside and outside surfaces of the body.</p>
+        <p>Adenocarcinoma is a cancer that forms in epithelial cells that produce fluids or mucus. Most cancers of the breast, colon, and prostate are adenocarcinomas.</p>
+        <p>Basal cell carcinoma is a cancer that begins in the lower or basal (base) layer of the epidermis, which is a person’s outer layer of skin.</p>
+    </div>
+    
+    <li><strong>Sarcoma</strong> <button onclick="toggleInfo('sarcomaInfo'); trackButtonClicks('sarcomaButton')">More Info</button></li>
+    <div id="sarcomaInfo">
+        <p>Sarcomas are cancers that form in bone and soft tissues, including muscle, fat, blood vessels, lymph vessels, and fibrous tissue (such as tendons and ligaments).</p>
+        <p>Osteosarcoma is the most common cancer of bone.</p>
+    </div>
+    
+    <li><strong>Leukemia</strong> <button onclick="toggleInfo('leukemiaInfo'); trackButtonClicks('leukemiaButton')">More Info</button></li>
+    <div id="leukemiaInfo">
+        <p>Leukemia is a cancer that starts in the blood-forming tissue of the bone marrow. These cancers do not form solid tumors.</p>
+    </div>
+    
+    <li><strong>Lymphoma</strong> <button onclick="toggleInfo('lymphomaInfo'); trackButtonClicks('lymphomaButton')">More Info</button></li>
+    <div id="lymphomaInfo">
+        <p>Lymphoma is cancer that begins in lymphocytes (T cells or B cells). There are two main types: Hodgkin lymphoma and Non-Hodgkin lymphoma.</p>
+    </div>
+    
+    <li><strong>Multiple Myeloma</strong> <button onclick="toggleInfo('myelomaInfo'); trackButtonClicks('myelomaButton')">More Info</button></li>
+    <div id="myelomaInfo">
+        <p>Multiple myeloma is cancer that begins in plasma cells. The abnormal plasma cells, called myeloma cells, build up in the bone marrow and form tumors in bones.</p>
+    </div>
+    
+    <li><strong>Melanoma</strong> <button onclick="toggleInfo('melanomaInfo'); trackButtonClicks('melanomaButton')">More Info</button></li>
+    <div id="melanomaInfo">
+        <p>Melanoma is cancer that begins in cells that become melanocytes, which produce melanin (the pigment that gives skin its color).</p>
+    </div>
+</ul>
+
+<h2>Signs and Symptoms</h2>
+<p>Common symptoms include:</p>
+<ul>
+    <li>Unexplained weight loss</li>
+    <li>Fever</li>
+    <li>Fatigue</li>
+    <li>Pain</li>
+    <li>Skin changes</li>
+</ul>
+
+<h2>Prevention</h2>
+<p>Steps to reduce the risk of cancer include:</p>
+<ul>
+    <li>Avoiding tobacco</li>
+    <li>Healthy diet</li>
+    <li>Regular exercise</li>
+    <li>Regular screenings</li>
+    <li>Limit alcohol consumption</li>
+</ul>
+
+<h2>Get Involved</h2>
+<p>Join the fight against cancer by:</p>
+<ul>
+    <li>Donating to cancer research organizations</li>
+    <li>Participating in awareness events</li>
+    <li>Spreading the word</li>
+    <button onclick="showPopup('Cancer Awareness'); trackButtonClicks('awarenessButton')">Get More Info on Cancer Awareness</button>
+</ul>
+
+<button onclick="resetButtonClicks()">https://www.who.int/health-topics/cancer#tab=tab_1</button>
+
+<footer>
+    <p>&copy; 2024 Cancer Awareness Initiative</p>
+</footer>
+
+</body>
+</html>
